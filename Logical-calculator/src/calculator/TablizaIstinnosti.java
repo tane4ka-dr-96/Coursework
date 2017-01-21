@@ -5,7 +5,8 @@ import javax.swing.JTextArea;
 public class TablizaIstinnosti {
 
     JTextArea display = new JTextArea();
-
+    
+    
     public void and(int a, int b) {
         if (a == 1 && b == 1) {
             display.setText(display.getText() + "1");
