@@ -12,7 +12,7 @@ public class LogicalButton extends JButton {
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "");
+                display.setText(display.getText() + title);
             }
         });
     }
