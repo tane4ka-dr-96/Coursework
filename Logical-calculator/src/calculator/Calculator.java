@@ -31,29 +31,19 @@ public class Calculator extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                TablizaIstinnosti my1 = new TablizaIstinnosti();
+                my1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+                my1.setBounds(200, 200, 700, 400);
+                JTable table =new JTable(5,3);
+                JScrollPane scrollpane = new JScrollPane(table);
+                table.setPreferredScrollableViewportSize(new Dimension(200,100));
+                my1.getContentPane().add(scrollpane);
+                my1.setVisible(true);
             }
         });
 
-        JMenuItem myMenuItem1 = new JMenuItem("Упростить функцию");
+        JMenuItem myMenuItem1 = new JMenuItem("Выход");
         myMenuItem1.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        JMenuItem myMenuItem2 = new JMenuItem("Решить выражение");
-        myMenuItem2.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        JMenuItem myMenuItem3 = new JMenuItem("Выход");
-        myMenuItem3.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -63,8 +53,6 @@ public class Calculator extends JFrame {
 
         menuMain.add(myMenuItem);
         menuMain.add(myMenuItem1);
-        menuMain.add(myMenuItem2);
-        menuMain.add(myMenuItem3);
         setJMenuBar(menuBar);
     }
 
@@ -77,8 +65,26 @@ public class Calculator extends JFrame {
         buttonPanel.add(new LogicalButton(display,"("));
         buttonPanel.add(new LogicalButton(display,")"));
         buttonPanel.add(new LogicalButton(display,"¬"));
-        buttonPanel.add(new LogicalButton(display,"C"));
-        buttonPanel.add(new LogicalButton(display,"CE"));
+        JButton button1=new JButton("C");
+        buttonPanel.add(button1);
+        button1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              String temp1 = display.getText();
+              display.setText(temp1.substring(0,temp1.length()-1));  
+            }
+        });
+        JButton button2=new JButton("CE");
+        buttonPanel.add(button2);
+        button2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            String temp = display.getText();
+            display.setText(temp.substring(temp.length()));   
+            }
+        });
         buttonPanel.add(new LogicalButton(display,"∨"));
         buttonPanel.add(new LogicalButton(display,"∧"));
         buttonPanel.add(new LogicalButton(display,"~"));
