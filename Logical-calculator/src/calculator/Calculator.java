@@ -125,5 +125,7 @@ public class Calculator extends JFrame {
 
     public static void main(String[] args) {
         Calculator my = new Calculator();
+        //LogicalCalculatorLexer lexer = new LogicalCalculatorLexer(new DataInputStream(System.in));
+        //LogicalCalculatorParser parser = new LogicalCalculatorParser(lexer);
     }
 }
