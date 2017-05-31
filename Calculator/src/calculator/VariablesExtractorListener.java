@@ -12,7 +12,6 @@ public class VariablesExtractorListener extends LogicalCalculatorBaseListener {
     }
     
     public ArrayList<String> getVariables(){
-        System.out.println(variables);
         return variables;
     }
     
