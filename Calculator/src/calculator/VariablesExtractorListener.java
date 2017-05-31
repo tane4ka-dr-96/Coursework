@@ -8,7 +8,6 @@ public class VariablesExtractorListener extends LogicalCalculatorBaseListener {
 
     @Override
     public void exitVar(LogicalCalculatorParser.VarContext ctx) {
-        System.out.println("calculator.VariablesExtractorListener.exitVar()");
         variables.add(ctx.getText());
     }
     
